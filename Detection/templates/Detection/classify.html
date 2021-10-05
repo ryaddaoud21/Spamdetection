@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'Detection/style.css' %}">
+
+
+        <meta charset="utf-8">
+    <title>Classify Page</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Choose Algorithm </h2>
+          algorithms :
+          <form action="{% url 'parameter' %}" method="POST">
+               {% csrf_token %}
+                          <div><select  name="algorithm" >
+                                <option value="1">KNN</option>
+                                <option value="2">SVC</option>
+                                <option value="3">DecisionTree</option>
+                                <option value="4">RandomForestClassifier</option>
+                                <option value="5">LogisticRegression</option>
+                                <option value="6">NaiveBayes</option>
+                           </select>
+                          </div>
+                <br>
+                <br>
+                <br> <br>
+                <br>
+                <br>
+              <div class="inputBox">
+                   <br>
+                     <input  type="submit"  value="Next">
+               </div>
+          </form>
+  </body>
+</html>

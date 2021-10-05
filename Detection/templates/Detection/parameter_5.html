@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'Detection/style.css' %}">
+
+        <meta charset="utf-8">
+    <title>Classify Page</title>
+  </head>
+  <body>
+    <form action="{% url 'start' %}" enctype="multipart/form-data" method="POST">
+      {% csrf_token %}
+    <div class="container">
+      <h2>Parameter </h2>
+
+        <h4> the chosen algorithm is : LogisticRegression <h3>
+            <br>
+ </h3></h4> <br>
+       <div class="inputBox">
+        <input type="text" name="parameter5_solver" required="required">
+            <span> Solver</span>
+       </div>
+             penalty :
+<br>
+<br>
+         <div>
+           <input type="radio" name="parameter5_penalty" id="parameter5_penalty1" required="required" value="l1">
+                <label for="parameter5_penalty1"> L1</label><br>
+            </div>
+            <div>
+           <input type="radio" name="parameter5_penalty" id="parameter5_penalty2" required="required" value="l2">
+                <label for="parameter5_penalty2"> L2
+                </label><br>
+                <br>
+            </div>
+      <div class="inputBox">
+    <a  href="{% url 'start'  %}">  <input type="submit" name="" value="Next"></a>
+      </div>
+    </div>
+</form>
+</body>
+</html>

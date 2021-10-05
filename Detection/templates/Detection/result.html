@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'Detection/style.css' %}">
+
+        <meta charset="utf-8">
+    <title>Result</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Result </h2>
+
+
+            <form action="{% url 'Test'  %}" method="POST">
+              {% csrf_token %}
+                <label for="w3review"></label>
+                <div class="inputBox">
+                <textarea id="w3review" name="w3review" rows="5" cols="40" placeholder="Text"> </textarea>
+                </div>
+                <br>
+            <div class="inputBox">
+                  <input type="submit" value="Predict">
+            </div>
+            <p>{{TestSpam}}</p>
+        </form>
+ </div>
+  </body>
+</html>

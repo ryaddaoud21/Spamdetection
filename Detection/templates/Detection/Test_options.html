@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'Detection/style.css' %}">
+
+        <meta charset="utf-8">
+    <title>Test Options</title>
+  </head>
+  <body>
+    <form action="{% url 'classify' %}" enctype="multipart/form-data" method="POST">
+      {% csrf_token %}
+    <div class="container">
+      <h2>Test Options</h2>
+          <br>
+            <div>
+              <input type="radio" name="parameter2_gamma" id="set" required="true" value="3">
+              <label for="set"> Use training set</label><br>
+
+           <input type="radio" name="parameter2_gamma" id="cross" required="true" value="1">
+                <label for="cross"> Cross-Validation</label><br>
+                <div class="inputBox">
+                <input type="text" name="test_1">
+                  <br>
+                  </div>
+            </div>
+        <br>
+        <hr>
+        <br>
+            <div>
+           <input type="radio" name="parameter2_gamma" id="split" required="true" value="2">
+                <label for="split"> Percentage Split</label><br>
+                <div class="inputBox">
+                      <input type="text" name="test_2">
+                    <br>
+                  </div>
+                <br>
+            </div>
+
+        <br>
+        <div class="inputBox" >
+    <input type="submit" name="" value="Next">
+        </div>
+</form>
+  </body>
+</html>

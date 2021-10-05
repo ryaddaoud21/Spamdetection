@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'Detection/style.css' %}">
+
+        <meta charset="utf-8">
+    <title>Creat Model</title>
+  </head>
+  <body>
+    <form action="{% url 'Create' %}" enctype="multipart/form-data" method="POST">
+      {% csrf_token %}
+      <div class="container">
+      <h2>Creat Model</h2>
+
+ <div class="inputBox">
+  <input type="submit"  value="Start Train">
+           </div>
+         </form>
+ <div class="inputBox">
+
+    <a  href="{% url 'result'  %}">  Use your model ?</a>
+      </div>
+
+      <pre>{{Result}}</pre>
+ </div>
+  </body>
+</html>

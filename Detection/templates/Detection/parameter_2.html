@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/html">
+  <head>
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'Detection/style.css' %}">
+
+        <meta charset="utf-8">
+    <title>Classify Page</title>
+  </head>
+  <body>
+    <form action="{% url 'start' %}" enctype="multipart/form-data" method="POST">
+      {% csrf_token %}
+    <div class="container">
+      <h2>Parameter </h2>
+
+        <h4> the chosen algorithm is : SVC <h3>
+            <br>
+ </h3></h4> <br>
+      <div class="inputBox">
+        <input type="text" name="parameter2_c" required="required">
+            <span>C (Float)</span>
+       </div>
+
+            <div>
+           <input type="radio" name="parameter2_gamma" id="parameter2_gamma1" required="required" value="scale">
+                <label for="parameter2_gamma1"> scale</label><br>
+            </div>
+            <div>
+           <input type="radio" name="parameter2_gamma" id="parameter2_gamma2" required="required" value="auto">
+                <label for="parameter2_gamma2"> Auto</label><br>
+
+                <br>
+            </div>
+      <div class="inputBox">
+    <input type="submit" name="" value="Next">
+      </div>
+    </div>
+  </form>
+  </body>

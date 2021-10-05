@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'Detection/style.css' %}">
+        <meta charset="utf-8">
+    <title>Classify Page</title>
+  </head>
+  <body>
+    <form action="{% url 'start' %}" enctype="multipart/form-data" method="POST">
+      {% csrf_token %}
+    <div class="container">
+      <h2>Parameter </h2>
+
+        <h4> the chosen algorithm is : DecisionTree <h3>
+ </h3></h4> <br>
+
+      <div class="inputBox"> <input type="submit" name="" value="Next">
+      </div>
+    </div>
+  </form>
+</body>
+</html>

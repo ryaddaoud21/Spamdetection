@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'Detection/style.css' %}">
+
+        <meta charset="utf-8">
+    <title>Home Page</title>
+  </head>
+  <body>
+<form action="{% url 'clean_data' %}" enctype="multipart/form-data" method="POST">
+  {% csrf_token %}
+    <div class="container">
+      <h2>Import your dataset (Preprocess)</h2>
+      <div class="inputBox">
+
+      <input type="file" name="file" value="" required="true"><br>
+      </div>
+      <div class="inputBox">
+        <input type="submit" name="" value="Next">
+      </div>
+    </div>
+  </form>
+  </body>
+</html>

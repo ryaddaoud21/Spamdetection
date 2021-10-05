@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'Detection/style.css' %}">
+
+        <meta charset="utf-8">
+    <title>Classify Page</title>
+  </head>
+  <body>
+    <form action="{% url 'start' %}" enctype="multipart/form-data" method="POST">
+      {% csrf_token %}
+
+    <div class="container">
+      <h2>Parameter </h2>
+        <h4> the chosen algorithm is : RandomForestClassifier <h3>
+            <br>
+ </h3></h4> <br>
+          <div class="inputBox">
+            <input type="text" name="parameter4_estimator" required="required">
+                <span> Number of estimators</span>
+           </div>
+            <div class="inputBox">
+           <input type="text" name="parameter4_jobs" required="required">
+            <span> Number of jobs</span>
+            </div>
+      <div class="inputBox">
+        <a href="{% url 'start'  %}">  <input type="submit" name="" value="Next"></a>
+      </div>
+    </div>
+</form>
+</body>
+</html>

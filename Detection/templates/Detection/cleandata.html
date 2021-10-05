@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'Detection/style.css' %}">
+
+        <meta charset="utf-8">
+    <title>Clean data</title>
+  </head>
+  <body>
+
+    <div class="container">
+      <h2>Clean your data</h2>
+
+      <form action="{% url 'clean' %}" enctype="multipart/form-data" method="POST">
+        {% csrf_token %}
+      <div class="inputBox" >
+       <a><input type="submit" name="next1" value="Clean" onclick=""></a>
+      </div>
+    </form>
+      <div class="inputBox" >
+       <a href="{% url 'testoptions'%}"><input type="submit" name="next1" value="Skip"></a>
+      </div>
+      <div class="inputBox" >
+       <a href="{% url 'testoptions'%}"><input type="submit" name="next1" value="Next"></a>
+      </div>
+
+<h2>{{Clean}}</h2>
+
+
+    </div>
+  </body>
+</html>
